@@ -18,7 +18,7 @@ const Products = (props) => {
       <IndexNavbar />
       <section className="header relative pt-16 items-center flex h-screen max-h-860-px">
         <div className="container mx-auto items-center flex flex-wrap">
-          {Array.isArray(data) && data.length > 0
+          {Array.isArray(products) && products.length > 0
             ? products.map((item) => (
                 <div className="w-full">
                   <Link

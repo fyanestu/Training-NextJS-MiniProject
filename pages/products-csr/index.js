@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import IndexNavbar from "@app/src/components/Navbars/IndexNavbar";
+import axios from "axios";
 
 const Products = () => {
   const [loading, setLoading] = useState(false);
