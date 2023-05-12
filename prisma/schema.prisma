@@ -6,6 +6,48 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  username  String    @db.VarChar(100)
+  email     String    @unique @db.VarChar(255)
+  password  String    @db.VarChar(255)
+  createdAt DateTime? @default(now()) @db.Timestamp(0)
+  updatedAt DateTime? @default(now()) @db.Timestamp(0)
+  deletedAt DateTime?
+  salt      String    @db.VarChar(255)
+
+  @@index([id], map: "index_user_id")
+}
+
+model Product {
+  id          Int             @id @default(autoincrement())
+  name        String
+  description String          @db.LongText
+  price       BigInt
+  images      Product_Image[]
+  createdAt   DateTime?       @default(now()) @db.Timestamp(0)
+  updatedAt   DateTime?       @default(now()) @db.Timestamp(0)
+  deletedAt   DateTime?
+
+  @@index([id], map: "index_product_id")
+}
+
+model Product_Image {
+  id            Int     @id @default(autoincrement())
+  productId     Int
+  filename      String? @db.VarChar(199)
+  original_name String?
+  destination   String?
+  mimetype      String?
+  size          Int?
+  prefix        String
+
+  product Product @relation(fields: [productId], references: [id])
+
+  @@index([id], map: "index_product_image_id")
+  @@index([productId], map: "product_image_productId_fkey")
 }

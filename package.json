@@ -9,13 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^4.14.0",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "cssnano": "^6.0.1",
     "joi": "^17.7.1",
+    "moment": "^2.29.4",
     "next": "13.4.2",
     "next-auth": "^4.22.1",
-    "next-connect": "^1.0.0",
+    "next-connect": "^0.13.0",
     "next-joi": "^2.2.1",
     "postcss": "8.4.23",
     "postcss-import": "^15.1.0",

@@ -84,38 +84,55 @@ npm install axios
 # Jalankan script
 npm run dev
 
+# Untuk SSR
+npm run build
+
+# Untuk run production bisa pakai
+npm run start
 
 # Untuk membantu melakukan validasi tipe data bisa menginstall prop-types
 npm install prop-types
 
 # Untuk membuat Next API, melakukan validasi API
-npm install next-connect
+npm install next-connect@0.13.0
 npm install joi@17.7.1  next-joi@2.2.1
 
 # Untuk membantu membuat halaman login bisa menggunakan next-auth
 npm install next-auth
+# Install moment untuk kebutuhan handling date time
+npm install moment
 
 # Untuk Database ORM bisa menggunakan Prisma
-npm install prisma
+npm install prisma @prisma/client
 # Buat file .env terlebih dahulu, silakan cek examplenya
 npx prisma
 npx prisma init
 # Edit file di ./prisma/schema.prisma
+npx prisma format
+npx prisma validate
 npx prisma migrate dev
+# Bisa juga langsung tanpa migrate dev (Code First) without migrate
+npx prisma db push
+# Jika sudah ada DB (DB First)
+npx prisma db pull
+
+
+# Install VS Code extension "REST CLient" kemudian buat file .\test-api.rest
+# Lakukan test api menggunakan file *.rest
 ```
 
 ---
 
 ## Mmini project menggunakan nextJS dan module yang terkait sebagai berikut
 
-### 1. Data Detching
+### 1. Data Fetching
 
 ```text
 - Server Side rendering ( SSR )
 - Static Site Generation ( SSG )
 ```
 
-### 2. Fetching API Third Party ( dummy API )
+### 2. Fetching API Third Party ( Dummy API )
 
 ```text
 - implement ke dalam component
