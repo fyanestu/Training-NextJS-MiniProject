@@ -122,6 +122,10 @@ npm install swr
 
 # Install VS Code extension "REST CLient" kemudian buat file .\test-api.rest
 # Lakukan test api menggunakan file *.rest
+
+# git push notes
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_rsa
 ```
 
 ---

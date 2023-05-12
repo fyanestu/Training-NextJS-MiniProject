@@ -24,11 +24,13 @@ export default function Login() {
         console.log({
           response,
         });
+        alert("Login sukses");
       })
       .catch((err) => {
         console.log({
           err,
         });
+        alert("Login gagal");
       });
   }
   return (
@@ -77,7 +79,7 @@ export default function Login() {
                   <div className="relative w-full mb-3">
                     <label
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="grid-password"
+                      htmlFor="email"
                     >
                       Email
                     </label>
@@ -85,6 +87,7 @@ export default function Login() {
                       type="email"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                       placeholder="Email"
+                      id={"email"}
                       name={"email"}
                       onChange={onChange}
                     />
@@ -93,12 +96,13 @@ export default function Login() {
                   <div className="relative w-full mb-3">
                     <label
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                      htmlFor="grid-password"
+                      htmlFor="password"
                     >
                       Password
                     </label>
                     <input
                       type="password"
+                      id={"password"}
                       name={"password"}
                       onChange={onChange}
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -121,7 +125,7 @@ export default function Login() {
                   <div className="text-center mt-6">
                     <button
                       className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                      type="button"
+                      type="submit"
                     >
                       Sign In
                     </button>
