@@ -47,7 +47,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Requirement
 
 - Node JS v16
-- Fake API (<https://jsonplaceholder.typicode.com/posts>)
+- Fake API Posts (<https://jsonplaceholder.typicode.com/posts>)
+- Fake API Products (<https://fakestoreapi.com/products>)
 
 ---
 
@@ -110,12 +111,14 @@ npx prisma init
 # Edit file di ./prisma/schema.prisma
 npx prisma format
 npx prisma validate
-npx prisma migrate dev
+npx prisma migrate dev --preview-feature
 # Bisa juga langsung tanpa migrate dev (Code First) without migrate
 npx prisma db push
 # Jika sudah ada DB (DB First)
 npx prisma db pull
 
+# Jika mau menggunakan SWR
+npm install swr
 
 # Install VS Code extension "REST CLient" kemudian buat file .\test-api.rest
 # Lakukan test api menggunakan file *.rest
@@ -148,7 +151,7 @@ npx prisma db pull
 - Dynamic Route ( include ( hit API ) )
 ```
 
-### 4. Create API di nextJS
+### 4. Create API di NextJS
 
 ```text
 - implementasi method ( GET , POST, DELETE )
@@ -163,3 +166,4 @@ npx prisma db pull
 - [Next JS Docs](https://nextjs.org/docs)
 - [Next Auth Docs](https://next-auth.js.org/getting-started/introduction)
 - [Prisma ORM Docs](https://www.prisma.io/docs)
+- [Supabase Free Postgres Online DB](https://supabase.com/)

@@ -1,6 +1,7 @@
 import { getSession, SessionProvider } from "next-auth/react";
 
 import "@app/styles/globals.css";
+import "@app/styles/custom.css";
 import "@app/styles/sass/main.scss";
 
 export default function App(props) {
